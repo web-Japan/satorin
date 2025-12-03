@@ -583,3 +583,183 @@ section h2 span {
     width: 180px !important;
     height: auto;
 }
+/* PCでは非表示 */
+.mobile-header {
+    display: none;
+}
+
+/* スマホ表示専用ヘッダー */
+@media (max-width: 768px) {
+    .mobile-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80px;                /* ← この高さがヒーローと重ならない鍵 */
+        background: #fff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .mobile-logo {
+        width: 180px;               /* ★大きく見やすく */
+        height: auto;
+    }
+
+    /* サイドバーのロゴはスマホでは隠す */
+    #sidebar h1 {
+        display: none;
+    }
+
+    /* スマホ時、ヒーローヘッダーを下げる */
+    #mainImg {
+        margin-top: 90px !important;   /* ← 80pxヘッダー＋余白 */
+    }
+}
+/* PCでは非表示 */
+.mobile-header {
+    display: none;
+}
+
+/* ハンバーガーの基本スタイル */
+.hamburger {
+    width: 30px;
+    cursor: pointer;
+}
+.hamburger span {
+    display: block;
+    height: 4px;
+    margin: 5px 0;
+    background: #333;
+    border-radius: 3px;
+}
+
+/* スライドメニュー（デフォルト非表示） */
+.mobile-menu {
+    position: fixed;
+    right: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: #ffffff;
+    box-shadow: -2px 0 6px rgba(0,0,0,0.1);
+    padding-top: 120px; /* ロゴの高さ分 */
+    transition: right 0.3s ease;
+    z-index: 9999;
+}
+
+.mobile-menu.open {
+    right: 0;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    border-bottom: 1px solid #eee;
+}
+
+/* ▼ スマホ専用設定 ▼ */
+@media (max-width: 768px) {
+
+    .mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 90px;
+        background: #fff;
+        padding: 0 20px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 9999;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .mobile-logo {
+        width: 200px;
+        height: auto;
+    }
+
+    /* ヒーローヘッダーが隠れないように */
+    #mainImg {
+        margin-top: 110px !important;
+    }
+
+    /* 右側サイドメニュー非表示 */
+    #sidebar {
+        display: none !important;
+    }
+}
+/* ======================
+   ハンバーガーメニュー
+====================== */
+.mobile-menu-btn {
+    display: none;
+}
+
+/* スマホのみ表示 */
+@media (max-width: 768px) {
+
+    .mobile-menu-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 28px;
+        height: 20px;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 2001;
+        opacity: 0.9;
+        cursor: pointer;
+    }
+
+    .mobile-menu-btn span {
+        display: block;
+        height: 3px;
+        background: #333;
+        border-radius: 2px;
+    }
+
+    /* メニュー本体 */
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -75%;
+        width: 75%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(6px);
+        z-index: 2000;
+        padding-top: 80px;
+        transition: 0.35s ease;
+    }
+
+    .mobile-menu.open {
+        right: 0;
+    }
+
+    .mobile-menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .mobile-menu li {
+        margin: 20px 0;
+    }
+
+    .mobile-menu a {
+        text-decoration: none;
+        color: #333;
+        font-size: 20px;
+        font-weight: 500;
+    }
+}
