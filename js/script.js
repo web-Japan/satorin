@@ -39,3 +39,11 @@ $(function(){
 	});
 
 });
+/* ============================
+   モバイル用メニュー
+============================ */
+$(function () {
+    $(".mobile-menu-btn").click(function () {
+        $("#mobileMenu").toggleClass("open");
+    });
+});
