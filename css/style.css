@@ -571,3 +571,15 @@ section h2 span {
     transform: translateY(-3px);
     box-shadow: 0 6px 18px rgba(0,0,0,0.2);
 }
+/* ヒーロー画像のはみ出し修正 */
+#mainImg img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+}
+
+/* ロゴを大きく表示 */
+#sidebar h1 img {
+    width: 180px !important;
+    height: auto;
+}
